@@ -1,0 +1,143 @@
+.bar {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  align-items: center;
+}
+.search-div {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input {
+  width: 50%;
+  max-width: 300px;
+  min-width: 150px;
+  height: 20px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 15px;
+  margin-left: 70px;
+  box-shadow: 2px 2px 10px rgba(1, 1, 1, 0.1);
+}
+.search-input:hover {
+  box-shadow: 2px 2px 10px rgba(1, 1, 1, 0.15);
+}
+.search-input:focus {
+  outline: none;
+  box-shadow: 2px 2px 10px rgba(1, 1, 1, 0.15);
+}
+.bar__search__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+}
+.bar__search__btn {
+  display: flex;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  background-color: rgb(245, 245, 245);
+
+  box-shadow: 2px 2px 10px rgba(1, 1, 1, 0.1);
+}
+.bar__search__btn:hover {
+  width: 70px;
+
+  border-radius: 11px;
+  transition-duration: 0.5s;
+}
+.bar__search__btn:active {
+  transform: translate(2px, 2px);
+}
+.bar__search--sign {
+  transition-duration: 0.3s;
+  display: flex;
+
+  position: absolute;
+  left: 3px;
+}
+
+.search__img {
+  width: 16px;
+  object-fit: contain;
+  transition-duration: 0.5s;
+}
+
+.search__text {
+  font-size: 12px;
+  position: absolute;
+  left: 23px;
+  transition-duration: 0.5s;
+}
+
+.right-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 30px;
+}
+.log {
+  padding-right: 10px;
+  font-size: 15px;
+}
+.profile {
+  display: flex;
+}
+.profile_name {
+  padding-right: 5px;
+}
+
+.menu-button {
+  width: 23px;
+  height: 23px;
+  border: none;
+  border-radius: 12px;
+  font-size: 8px;
+  background-color: rgb(245, 245, 245);
+}
+.menu-button:hover {
+  cursor: pointer;
+  background-color: rgb(240, 240, 240);
+}
+.menu-div {
+  position: absolute;
+  z-index: 3;
+  height: 200px;
+  background-color: rgb(248, 248, 248);
+  top: 40px;
+  right: 30px;
+  width: 100px;
+  font-size: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(1, 1, 1, 0.15);
+}
+.menu__home {
+  text-decoration: none;
+  font-size: 15px;
+}
+.menu__home:hover {
+  font-size: 18px;
+}
+.menu__home:visited {
+  color: black;
+}
+.menu__logout {
+  font-size: 15px;
+  background-color: rgb(248, 248, 248);
+  border: none;
+}
+.menu__logout:hover {
+  font-size: 18px;
+  cursor: pointer;
+}

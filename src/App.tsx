@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Bar } from './bar/bar';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './pages/home/home';
+import { Login } from './pages/login/login';
+import { Register } from './pages/register/register';
+import { Registered } from './pages/registered/registered';
+import { Logged } from './pages/logged/logged';
+import { Weather } from './pages/weather/weather';
+import { Service } from './pages/service/service';
+import { Setting } from './pages/setting/setting';
+//import { FetchData } from './component/fetchdata';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Bar />
+      {/* <FetchData /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/registered" element={<Registered />} />
+        <Route path="/logged" element={<Logged />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/setting" element={<Setting />} />
+      </Routes>
     </div>
   );
 }
