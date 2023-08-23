@@ -10,7 +10,7 @@ export type WeatherUserState = {
   sex: Sex;
   userId: number;
   email: string;
-  myCities?: Array<String> | undefined;
+  myCities?: Array<string> | undefined;
 };
 
 export const initialState: WeatherUserState = {
@@ -34,7 +34,10 @@ export const weatherUserSlice = createSlice({
       state.myCities?.push(action.payload);
     },
     deleteCity: (state: WeatherUserState, action: PayloadAction<string>) => {
-      state.myCities?.filter((city) => city !== action.payload);
+      console.log(action.payload);
+      state.myCities = state.myCities?.filter(
+        (city) => city !== action.payload
+      );
     },
     resetSex: (state: WeatherUserState, action: PayloadAction<Sex>) => {
       state.sex = action.payload;

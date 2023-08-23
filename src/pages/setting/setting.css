@@ -1,0 +1,33 @@
+.setting__container {
+  width: 300px;
+}
+.setting__top {
+  margin: 10px;
+}
+.setting__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+.setting__list__middle__left {
+  flex: 1;
+  color: rgb(70, 70, 70);
+}
+.setting__list__middle__right {
+  flex: 1;
+  color: rgb(70, 70, 70);
+}
+.setting__list__left {
+  flex: 1;
+  transition-duration: 0.3s;
+}
+.setting__list__left:hover {
+  cursor: pointer;
+}
+.setting__list__left:active {
+  transform: translate(2px, 2px);
+}
+.setting__list__right {
+  flex: 1;
+}

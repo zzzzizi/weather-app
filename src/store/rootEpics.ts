@@ -1,5 +1,11 @@
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { localUserStorageEpic } from '../helper/getLocalStorage/getLocalStorage';
+import {
+  localUserStorageEpic,
+  deleteCityStorageEpic,
+} from './epics/localStorage/getLocalStorage';
 import { WeatherUserAction, WeatherUserState } from '../features/userSlice';
 
-export const rootEpic = combineEpics(localUserStorageEpic);
+export const rootEpic = combineEpics(
+  localUserStorageEpic,
+  deleteCityStorageEpic
+);

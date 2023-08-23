@@ -30,8 +30,7 @@ export const ShowChartData = ({ cityName }: { cityName: string }) => {
   const user = useSelector((state: RootState) => state.weatherUser);
   const location = cityName;
 
-  const city = myCities?.findIndex((e) => (e = cityName));
-  console.log(city);
+  const cityExist = myCities?.findIndex((e) => e === cityName);
 
   const { data, loading } = useFetchData({
     url,
@@ -62,7 +61,7 @@ export const ShowChartData = ({ cityName }: { cityName: string }) => {
               {data?.location?.name},{data?.location?.country}
             </div>
             <div>
-              {user.name && (
+              {user.name && cityExist === -1 && (
                 <button
                   onClick={() => {
                     dispatch(addCity(cityName.toLowerCase()));
