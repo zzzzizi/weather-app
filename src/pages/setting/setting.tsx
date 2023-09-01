@@ -38,15 +38,17 @@ export const Setting = () => {
     <div className="setting__container">
       {userName ? (
         <div>
-          <div className="setting__top">My favorite city</div>
-          <div className="setting__list">
-            <div className="setting__list__middle__left">City name</div>
-            <div className="setting__list__middle__right">Delete</div>
-          </div>
           <div>
-            {cityName?.map((city, index) => (
-              <ShowCity city={city} key={index} />
-            ))}
+            <div className="setting__top">My favorite city</div>
+            <div className="setting__list">
+              <div className="setting__list__middle__left">City name</div>
+              <div className="setting__list__middle__right">Delete</div>
+            </div>
+            <div>
+              {cityName?.map((city, index) => (
+                <ShowCity city={city} key={index} />
+              ))}
+            </div>
           </div>
         </div>
       ) : (

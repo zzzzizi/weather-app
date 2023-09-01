@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState, useMemo } from 'react';
-import { Data } from '../pages/weather/showChartData/showChartData';
+import { Data } from 'features/weatherSlice';
 
 export const useFetchData = ({
   url,

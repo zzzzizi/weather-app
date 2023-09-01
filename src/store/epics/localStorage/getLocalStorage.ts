@@ -1,11 +1,10 @@
-import { ofType, Epic } from 'redux-observable';
+import { Epic } from 'redux-observable';
 
 import { User } from '../../../pages/register/register';
 import { addCity, deleteCity } from '../../../features/userSlice';
 import { tap, ignoreElements, withLatestFrom, filter } from 'rxjs';
 import { RootState } from '../../../features/userSlice';
-import { WeatherUserAction } from '../../../features/userSlice';
-import { isActionOf } from 'typesafe-actions';
+import { RootAction } from 'store/store';
 // export const getLocal = ({ user }: { user: WeatherUserState }) => {
 //   const stringifiedUser = localStorage.getItem('user');
 //   const users: Array<User> = [];
@@ -18,11 +17,10 @@ import { isActionOf } from 'typesafe-actions';
 //   localStorage.setItem('user', JSON.stringify(newUsers));
 // };
 
-export const localUserStorageEpic: Epic<
-  WeatherUserAction,
-  WeatherUserAction,
-  RootState
-> = (action$, state$) =>
+export const localUserStorageEpic: Epic<RootAction, RootAction, RootState> = (
+  action$,
+  state$
+) =>
   action$.pipe(
     filter(addCity.match),
     withLatestFrom(state$, ({ payload }, state) => ({
@@ -46,11 +44,10 @@ export const localUserStorageEpic: Epic<
     ignoreElements()
   );
 
-export const deleteCityStorageEpic: Epic<
-  WeatherUserAction,
-  WeatherUserAction,
-  RootState
-> = (action$, state$) =>
+export const deleteCityStorageEpic: Epic<RootAction, RootAction, RootState> = (
+  action$,
+  state$
+) =>
   action$.pipe(
     filter(deleteCity.match),
     withLatestFrom(state$, ({ payload }, state) => ({

@@ -1,13 +1,24 @@
 import { configureStore } from '@reduxjs/toolkit';
-import weatherUserSlice, { WeatherUserAction } from '../features/userSlice';
-// import { epicMiddleware } from './rootEpics';
+import weatherUserSlice, { AddCityAction } from '../features/userSlice';
+
 import { rootEpic } from './rootEpics';
 import { RootState } from '../features/userSlice';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { createEpicMiddleware } from 'redux-observable';
+import weatherSlice, {
+  FetchSuccessAction,
+  FetchCityDataAction,
+  FetchErrAction,
+} from 'features/weatherSlice';
+
+export type RootAction =
+  | AddCityAction
+  | FetchCityDataAction
+  | FetchSuccessAction
+  | FetchErrAction;
 
 export const epicMiddleware = createEpicMiddleware<
-  WeatherUserAction,
-  WeatherUserAction,
+  RootAction,
+  RootAction,
   RootState,
   void
 >();
@@ -15,6 +26,7 @@ export const epicMiddleware = createEpicMiddleware<
 export const store = configureStore({
   reducer: {
     weatherUser: weatherUserSlice,
+    weather: weatherSlice,
   },
   middleware: [epicMiddleware],
 });

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { ActionType } from 'typesafe-actions';
+
+import { CityDataState } from './weatherSlice';
 
 export type Sex = 'male' | 'female' | 'other';
 export type WeatherUserState = {
@@ -34,7 +35,6 @@ export const weatherUserSlice = createSlice({
       state.myCities?.push(action.payload);
     },
     deleteCity: (state: WeatherUserState, action: PayloadAction<string>) => {
-      console.log(action.payload);
       state.myCities = state.myCities?.filter(
         (city) => city !== action.payload
       );
@@ -62,7 +62,10 @@ export const {
   logOut,
 } = weatherUserSlice.actions;
 
-export type RootState = { weatherUser: WeatherUserState };
+export type RootState = {
+  weatherUser: WeatherUserState;
+  weather: CityDataState;
+};
 
 export type AddCityAction = ReturnType<typeof addCity>;
 export type LoginAction = ReturnType<typeof login>;

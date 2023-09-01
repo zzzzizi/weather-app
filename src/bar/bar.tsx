@@ -60,7 +60,7 @@ export const Bar = () => {
               setToggle(!toggle);
             }}
           >
-            | | |
+            {toggle === false ? '+' : '-'}
           </button>
           {toggle && <Menu toggle={toggle} setToggle={setToggle} />}
         </div>

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { login } from '../../features/userSlice';
+import { fetchCityData } from 'features/weatherSlice';
 import { useDispatch } from 'react-redux';
 import { Sex } from '../../features/userSlice';
 import './login.css';
@@ -22,6 +23,7 @@ export const Login = () => {
     userId: number;
     password: string;
     confirmPassword: string;
+    myCities: Array<string>;
   }> = [];
   if (stringifiedUser !== null) {
     user.push(...JSON.parse(stringifiedUser));
@@ -53,6 +55,7 @@ export const Login = () => {
 
       if (loginUser && loginUser.password === values.password) {
         dispatch(login(loginUser));
+        loginUser.myCities.map((city) => dispatch(fetchCityData(city)));
         console.log(loginUser);
         navigate('/logged');
       } else if (loginUser) {
