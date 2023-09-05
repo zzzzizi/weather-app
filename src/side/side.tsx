@@ -13,20 +13,17 @@ export const Side = () => {
 
   return (
     <div className="side">
-      <div>My profile</div>
+      <div className="side__tittle">My profile</div>
       {email && (
         <div>
-          <div>
-            <button onClick={() => setIsEmail(!isEmail)}>email</button>
-            {isEmail && (
-              <div onClick={() => navigate('/setemail')}>{email}</div>
-            )}
+          <div className="side__email">
+            <div>My E-mail:</div>
+            <div>{email}</div>
           </div>
-          <div>
-            <button onClick={() => setIsSex(!isSex)}>sex</button>
-            {isSex && <div>{sex}</div>}
+          <div></div>
+          <div onClick={() => navigate('/setemail')} className="side__reset">
+            Reset
           </div>
-          <div>password</div>
         </div>
       )}
     </div>

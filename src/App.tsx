@@ -18,10 +18,10 @@ function App() {
     <div className="app">
       <Bar />
       <div className="app__middle">
-        <div className="col-s-3 col-4 col-">
+        <div className="col-s-3 col-4 col-  side__container">
           <Side />
         </div>
-        <div className="col-s-9 col-8 col-">
+        <div className="col-s-9 col-8 col- routes__container">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
